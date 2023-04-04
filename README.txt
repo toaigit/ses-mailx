@@ -1,3 +1,5 @@
+OS Package Installation:
+  dnf install -y dnf-utils zip unzip git bind-utils mailx sendmail
 UPDATE the sendmail.mc for the following lines:
    SMART_HOST (i.e., email-smtp.us-west-2.amazonaws.com)
    MASQUERADE_AS (i.e., resourceonline.org)
