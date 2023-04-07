@@ -13,3 +13,8 @@ UPDATE the access file with your aws ses account info:
 NOTEs:  Please familiar with the following documents
 https://docs.aws.amazon.com/ses/latest/dg/send-email.html
 https://docs.aws.amazon.com/ses/latest/dg/send-email-sendmail.html
+
+WHAT IS SMTP Server, SMTP Relay Servers?
+https://whatismyipaddress.com/mail-server
+https://www.socketlabs.com/blog/smtp-relay/
+https://www.proofpoint.com/us/threat-reference/smtp-relay
