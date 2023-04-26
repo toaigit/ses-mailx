@@ -19,6 +19,9 @@ UPDATE the authinfo file with your aws ses account info:
 UPDATE the access file with your aws ses account info:
    Connect:YOUR-AWS-SMTP-ENDPOINT   RELAY
    i.e., Connect:email-smtp.us-west-2.amazonaws.com RELAY
+RUN update.sh to update sendmail configuration file
+
+VALIDATE using mailx -r your-verified-email -s "Hello World" receipient-email < /path/file2send
 
 NOTEs:  Please familiar with the following documents
 https://docs.aws.amazon.com/ses/latest/dg/send-email.html
