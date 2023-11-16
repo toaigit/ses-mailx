@@ -27,26 +27,32 @@ NOTEs:  Please familiar with the following documents
 https://docs.aws.amazon.com/ses/latest/dg/send-email.html
 https://docs.aws.amazon.com/ses/latest/dg/send-email-sendmail.html
 
-Create SMTP credential (SMTP setting page)
+Create SMTP credential using AWS console
     IAM User Name:  ses-smtp-vpsa-dev (then click create Button)
     You then download the credentials (userid password), or click on the
     Show User SMTP security credential 
+Verify sender email
     Click on Verified identities (making sure you are on the correct region.
     Click on Create identity button, then select Email Address, then enter 
     the email address.  AWS will send the email to this user and this user will
     need to click on the link to validate the email.
     NOTE that - You will see SMTP endpoint, port information on the SMTP settings link.
-    Just FYI - the SMTP credential has the following permission:
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "ses:SendRawEmail",
-            "Resource": "*"
-        }
-      ]
-    }
+
+OPTIONAL:  
+   if you want to use terraform you can use the two terraform templates
+      create-smtp-user.templ and verify-email.templ
+   You need to have the following permissiont to run the terraform:
+     	"ses:VerifyEmailIdentity",
+	"ses:DeleteIdentity",  
+	"iam:CreateUser",
+	"iam:TagUser",
+	"iam:PutUserPolicy",
+	"iam:CreateAccessKey",
+	"iam:DeleteUserPolicy",
+	"iam:DeleteAccessKey",
+	"iam:DeleteUser",
+NOTE:
+   SMTP endpoint TLS port 465 or 2465, STARTTLS 587 or 2587
 
 FOR MORE INFORMATION ON WHAT IS SMTP Server, SMTP Relay Servers?
 https://whatismyipaddress.com/mail-server

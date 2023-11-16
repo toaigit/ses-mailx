@@ -1,0 +1,26 @@
+resource "aws_iam_user" "ses-smtp" {
+  name = "mysmtp-user"
+
+  tags = {
+    creator = "toaivo"
+  }
+}
+
+resource "aws_iam_access_key" "smtp-key-name" {
+  user = aws_iam_user.ses-smtp.name
+}
+
+data "aws_iam_policy_document" "smtp_policy_doc" {
+  statement {
+    effect    = "Allow"
+    actions   = ["ses:SendRawEmail"]
+    resources = ["*"]
+  }
+}
+
+#   create a policy name smtp-test-tbd & attach to the user.
+resource "aws_iam_user_policy" "lb_ro" {
+  name   = "smtp-senmail-policy"
+  user   = aws_iam_user.ses-smtp.name
+  policy = data.aws_iam_policy_document.smtp_policy_doc.json
+}
