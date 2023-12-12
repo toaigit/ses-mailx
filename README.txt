@@ -55,6 +55,7 @@ NOTE:
    SMTP endpoint TLS port 465 or 2465, STARTTLS 587 or 2587
    if you get "AUTH=client, available mechanisms do not fulfill requirements" error, you need to install cyrus-sasl-plain package.
    if you get "Connection refused by 0.0.0.0", you need to set the hostname matching your MASQUERADE_AS setting in sendmail.mc file with hostnamectl set-hostname fqdn-hostname
+   if you can send only to verified-emails, you need to place a request to have your aws ses to a production mode (out of the sandbox status).
 
 FOR MORE INFORMATION ON WHAT IS SMTP Server, SMTP Relay Servers?
 https://whatismyipaddress.com/mail-server
