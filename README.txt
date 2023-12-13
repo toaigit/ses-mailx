@@ -21,7 +21,8 @@ UPDATE the access file with your aws ses account info:
    i.e., Connect:email-smtp.us-west-2.amazonaws.com RELAY
 RUN update.sh to update sendmail configuration file
 
-VALIDATE using mailx -r your-verified-email -s "Hello World" receipient-email < /path/file2send
+VALIDATE 
+  Once the setup done (after running the update.sh), you can validate sendmail using the script test-sendmail.sh script
 
 NOTEs:  Please familiar with the following documents
 https://docs.aws.amazon.com/ses/latest/dg/send-email.html
