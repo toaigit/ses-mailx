@@ -1,0 +1,5 @@
+Welcome to AWS SES,
+
+I got mail!  Awesome, It works!
+
+Your AWS SES Team.
